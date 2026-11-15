@@ -1,10 +1,9 @@
 print('Self Reflection:')
 
-#1.
+#1. Using this script or something similar is extremely effeciant compared to exel. Youd have to manually imput or append sheets in exel
 
-#2.
+#2. You can use that made to keep track of every sale of the  day and see when the transaction took place and for how much
 
-#3.
 
 import csv
 from datetime import datetime
