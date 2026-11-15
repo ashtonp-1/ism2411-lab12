@@ -130,3 +130,12 @@ with open(sales, "r", newline="") as file:
 
 for product in sorted(sales_summary):
     print(f'{product}: ${sales_summary[product]:.2f}')
+
+print('Exersise 8:')
+
+timestamp = datetime.now()
+
+with open("data/run_log.txt", "a") as file:
+    file.write(f'{timestamp} | Total Revenue ${total_revenue:.2f}\n')
+
+print('Run Log Updated Sucessfully')
