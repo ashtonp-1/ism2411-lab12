@@ -15,8 +15,19 @@ sales = "data/sales.csv"
 
 print('Exersise 2:')
 
-with open(sales, "r", newline="") as sales:
-    reader = csv.reader(sales)
+with open(sales, "r", newline="") as file:
+    reader = csv.reader(file)
+
+    for row in reader:
+        print(row)
+
+print('Exersise 3:')
+
+with open(sales, "r", newline="") as file:
+    reader = csv.reader(file)
+
+    header = next(reader)
+    print(header)
 
     for row in reader:
         print(row)
