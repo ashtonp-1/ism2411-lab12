@@ -85,3 +85,48 @@ with open(sales, "r", newline="") as infile:
 print(f'Original rows: {original_count}')
 print(f'Rows written: {written_count}')
 
+
+print('Exersise 6:')
+
+dirt_total = 0
+
+with open(sales, "r", newline="") as file:
+    reader = csv.reader(file)
+    header = next(reader)
+ 
+    for row in reader:
+        product = row[0]
+        price = float(row[1])
+        quantity = int(row[2])
+
+
+        revenue = price * quantity
+        dirt_total += revenue
+
+        print(f'Product: {product}: ${revenue:.2f}')
+
+print(f'Dirtreader total revenue: ${dirt_total:.2f}')    
+
+print('Exersise 7:')
+
+sales_summary = {}
+
+with open(sales, "r", newline="") as file:
+    reader = csv.reader(file)
+
+    header = next(reader)
+
+    for row in reader:
+        product = row[0]
+        price = float(row[1])
+        quantity = int(row[2])
+
+        revenue = price * quantity
+
+        if product in sales_summary:
+            sales_summary[product] += revenue
+        else:
+            sales_summary[product] = revenue
+
+for product in sorted(sales_summary):
+    print(f'{product}: ${sales_summary[product]:.2f}')
